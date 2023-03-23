@@ -5,7 +5,7 @@ AppBar appBar(String text) {
     iconTheme: const IconThemeData(
       color: Colors.black,
     ),
-    backgroundColor: const Color.fromARGB(255, 133, 133, 133),
+    backgroundColor: const Color.fromARGB(255, 207, 207, 207),
     toolbarHeight: 80,
     elevation: 14,
     centerTitle: true,

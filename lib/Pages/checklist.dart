@@ -27,6 +27,8 @@ class ChecklistState extends State<Checklist> {
                   // Button welcher zur CreateList Page führt
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(370, 290),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25)),
                       backgroundColor:
                           Theme.of(context).colorScheme.surfaceVariant),
                   onPressed: () => Navigator.push(
@@ -50,6 +52,8 @@ class ChecklistState extends State<Checklist> {
                   // Button welcher zur ViewList führt
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(370, 290),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25)),
                       backgroundColor:
                           Theme.of(context).colorScheme.surfaceVariant),
                   onPressed: () => Navigator.push(
