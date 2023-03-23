@@ -1,16 +1,8 @@
-# droneassistent
+# Drone Assistent
 
-A new Flutter project.
+Ein auf Flutter basierende Applikation welche  Unterstützung für Drohnen Operatoren bietet.
 
-## Getting Started
+## Funktionalitäten
+Die App erlaubt es den Nutzer einzusehen wo sich für Drohnen Flugverbotszonen verbinden mit einem ~ 8km Radius auf einer Open Streets Map.
+Zudem kann der Nutzer mit einer Checkliste jeden seiner Flüge dokumentieren und lokal archivieren.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
