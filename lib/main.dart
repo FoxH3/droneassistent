@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'services/provider/locale_provider.dart';
 import 'services/provider/darkmode_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './Pages/map.dart';
+import 'Pages/noflymap.dart';
 
 void main() => runApp(const MyApp());
 
@@ -151,7 +151,7 @@ class MyHomePageState extends State<MyHomePage> {
         body: SafeArea(
             child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -159,12 +159,14 @@ class MyHomePageState extends State<MyHomePage> {
                         // Button welcher zur No Fly Map führt
                         style: ElevatedButton.styleFrom(
                             minimumSize: const Size(370, 290),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
                             backgroundColor:
                                 Theme.of(context).colorScheme.surfaceVariant),
                         onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Map()),
+                                  builder: (context) => const NoFlyMap()),
                             ),
                         child: Column(children: [
                           Icon(
@@ -182,6 +184,8 @@ class MyHomePageState extends State<MyHomePage> {
                         // Button welcher zur Checklist Page führt
                         style: ElevatedButton.styleFrom(
                             minimumSize: const Size(370, 290),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
                             backgroundColor:
                                 Theme.of(context).colorScheme.surfaceVariant),
                         onPressed: () => Navigator.push(

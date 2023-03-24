@@ -13,8 +13,12 @@ class ChecklistState extends State<CreateList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar("CreateList"),
-      body: Container(),
-    );
+        appBar: appBar("CreateList"),
+        body: const SafeArea(
+            child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                child: Column(
+                  children: [TextField()],
+                ))));
   }
 }
