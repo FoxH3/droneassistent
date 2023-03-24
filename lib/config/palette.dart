@@ -48,7 +48,7 @@ class Palette with ChangeNotifier {
     textTheme: const TextTheme(
       headlineLarge: TextStyle(color: Color(0xE6333333)), // Main Menu Button
       headlineSmall: TextStyle(
-        color: Color(0xFFF6FDFF),
+        color: Color(0xE6333333),
       ), // Überschrift (appbar)
       titleMedium: TextStyle(
         color: Color(0xE6333333),
