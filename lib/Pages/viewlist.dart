@@ -15,6 +15,7 @@ class _ViewlistState extends State<ViewList> {
   String location = "";
   String start = "";
   String end = "";
+  String desc = "";
 
   late SharedPreferences prefs;
 
@@ -27,7 +28,7 @@ class _ViewlistState extends State<ViewList> {
     super.initState();
   }
 
-  _retrievechecklist() async {
+  _retrieve() async {
     // holt die gespeicherten Werte
     prefs = await SharedPreferences.getInstance();
     name = prefs.getString("_name")!;
@@ -35,6 +36,44 @@ class _ViewlistState extends State<ViewList> {
     location = prefs.getString("_location")!;
     start = prefs.getString("_start")!;
     end = prefs.getString("_end")!;
+    desc = prefs.getString("_desc")!;
+    setState(() {});
+  }
+
+  _delete() async {
+    // Löscht die gespeicherten Werte
+    prefs = await SharedPreferences.getInstance();
+    prefs.remove("_name");
+    prefs.remove("_surname");
+    prefs.remove("_location");
+    prefs.remove("_start");
+    prefs.remove("_end");
+    prefs.remove("_desc");
+
+    prefs.setString(
+      "_name",
+      "",
+    );
+    prefs.setString(
+      "_surname",
+      "",
+    );
+    prefs.setString(
+      "_location",
+      "",
+    );
+    prefs.setString(
+      "_start",
+      "",
+    );
+    prefs.setString(
+      "_end",
+      "",
+    );
+    prefs.setString(
+      "_desc",
+      "",
+    );
     setState(() {});
   }
 
@@ -68,14 +107,44 @@ class _ViewlistState extends State<ViewList> {
                         alignment: Alignment.centerLeft,
                         child: Text("Endtime: $end",
                             style: Theme.of(context).textTheme.titleMedium)),
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Description: $desc",
+                            style: Theme.of(context).textTheme.titleMedium)),
                     const SizedBox(height: 20),
                     ElevatedButton(
                         onPressed: () async {
-                          _retrievechecklist();
+                          _retrieve();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                backgroundColor: Colors.green,
+                                content: Text(
+                                  'Entry was successsfully loaded',
+                                  textAlign: TextAlign.center,
+                                )),
+                          );
                         },
                         child: Text(
                           "Retrieve the Entry",
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        )),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                        onPressed: () async {
+                          _delete();
+                          _retrieve();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                backgroundColor: Colors.green,
+                                content: Text(
+                                  'Entry was successfully deleted',
+                                  textAlign: TextAlign.center,
+                                )),
+                          );
+                        },
+                        child: Text(
+                          "Delete the Entry",
+                          style: Theme.of(context).textTheme.headlineSmall,
                         )),
                   ],
                 ))));

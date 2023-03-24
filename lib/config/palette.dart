@@ -25,7 +25,7 @@ class Palette with ChangeNotifier {
         color: Color(0xFFF6FDFF),
       ), // Sliding Panel
       bodyLarge: TextStyle(
-        color: Color(0xE6333333),
+        color: Color(0xFFF6FDFF),
       ), // Haupttext
       bodyMedium: TextStyle(
         color: Colors.black,
@@ -48,7 +48,7 @@ class Palette with ChangeNotifier {
     textTheme: const TextTheme(
       headlineLarge: TextStyle(color: Color(0xE6333333)), // Main Menu Button
       headlineSmall: TextStyle(
-        color: Color(0xE6333333),
+        color: Color(0xFFF6FDFF),
       ), // Überschrift (appbar)
       titleMedium: TextStyle(
         color: Color(0xE6333333),

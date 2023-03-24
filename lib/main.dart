@@ -115,7 +115,7 @@ class MyHomePageState extends State<MyHomePage> {
                             ],
                           ),
                           Divider(
-                            color: Theme.of(context).colorScheme.secondary,
+                            color: Theme.of(context).colorScheme.tertiary,
                           )
                         ],
                       )),
@@ -141,7 +141,7 @@ class MyHomePageState extends State<MyHomePage> {
                             ],
                           ),
                           Divider(
-                            color: Theme.of(context).colorScheme.secondary,
+                            color: Theme.of(context).colorScheme.tertiary,
                           )
                         ],
                       )),

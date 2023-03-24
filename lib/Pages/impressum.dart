@@ -68,7 +68,7 @@ class Impressumview extends StatelessWidget {
                   height: 10,
                 ),
                 SizedBox(
-                  height: 550,
+                  height: 640,
                   child: ScrollConfiguration(
                       behavior: const ScrollBehavior(),
                       child: GlowingOverscrollIndicator(
