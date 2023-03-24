@@ -54,6 +54,7 @@ dev_dependencies:
 
 flutter_icons:
   android: true
+  iOS: true
   image_path: "assets/icons/icon.png"
   min_sdk_android: 21
 
@@ -72,7 +73,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/
-    - assets/images
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
