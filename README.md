@@ -1,6 +1,6 @@
 # Drone Assistent
 
-Ein auf Flutter basierende Applikation welche  Unterstützung für Drohnen Operatoren bietet.
+Eine auf Flutter basierende Applikation welche  Unterstützung für Drohnen Operatoren bietet.
 
 ## Funktionalitäten
 Die App erlaubt es den Nutzer einzusehen wo sich für Drohnen Flugverbotszonen verbinden mit einem ~ 8km Radius auf einer Open Streets Map.
