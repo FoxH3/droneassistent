@@ -43,7 +43,7 @@ class ChecklistState extends State<Checklist> {
                       color: Theme.of(context).colorScheme.tertiary,
                     ),
                     Text(
-                      "Create New Checklist",
+                      "Create a New Entry",
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
                   ])),
@@ -68,7 +68,7 @@ class ChecklistState extends State<Checklist> {
                       color: Theme.of(context).colorScheme.tertiary,
                     ),
                     Text(
-                      "View existing Checklists",
+                      "View existing Entry",
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
                   ])),

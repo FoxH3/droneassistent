@@ -19,7 +19,7 @@ class ChecklistState extends State<CreateList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBar("CreateList"),
+        appBar: appBar("Create an Entry"),
         body: SafeArea(
             child: Padding(
                 padding:
@@ -55,6 +55,13 @@ class ChecklistState extends State<CreateList> {
                         child: Text("Endzeitpunkt",
                             style: Theme.of(context).textTheme.titleMedium)),
                     const TextField(),
+                    const SizedBox(height: 30),
+                    ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Save the Entry",
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ))
                   ],
                 ))));
   }

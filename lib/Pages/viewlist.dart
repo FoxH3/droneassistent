@@ -13,7 +13,7 @@ class ChecklistState extends State<ViewList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar("ViewList"),
+      appBar: appBar("Entry Viewer"),
       body: Container(),
     );
   }
