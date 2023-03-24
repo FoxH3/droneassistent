@@ -2,6 +2,12 @@ import '../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/*
+Bildet die Checklist Creation Page auf der
+der User einen Eintrag verfassen kann.
+Dieser wird mit Shared Preferences lokal gespeichert.
+*/
+
 class CreateList extends StatefulWidget {
   const CreateList({Key? key}) : super(key: key);
 
@@ -16,6 +22,8 @@ class _CreateListState extends State<CreateList> {
   late TextEditingController _startController;
   late TextEditingController _endController;
   late TextEditingController _descController;
+  late SharedPreferences prefs;
+
   String name = "";
   String surname = "";
   String location = "";
@@ -23,14 +31,13 @@ class _CreateListState extends State<CreateList> {
   String end = "";
   String desc = "";
 
-  late SharedPreferences prefs;
-
   getSharedPreferences() async {
     prefs = await SharedPreferences.getInstance();
   }
 
   @override
   void initState() {
+    // Initiert die Controller für die TextField Widgets
     super.initState();
     _nameController = TextEditingController();
     _surnameController = TextEditingController();

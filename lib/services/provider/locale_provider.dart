@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '/config/l10n/l10n.dart';
+
+/* 
+Der Locale Provider dient zur Implementation 
+von mehreren Developer definierten Sprachen.
+*/
 
 class LocaleProvider extends ChangeNotifier {
   Locale _locale;

@@ -56,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
+  // Baut die eigentliche Homepage
   @override
   Widget build(BuildContext context) {
     return Scaffold(

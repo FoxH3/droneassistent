@@ -2,6 +2,10 @@ import '../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/*
+Hier wird die Checklist View Page gebildet
+*/
+
 class ViewList extends StatefulWidget {
   const ViewList({Key? key}) : super(key: key);
 
@@ -10,14 +14,14 @@ class ViewList extends StatefulWidget {
 }
 
 class _ViewlistState extends State<ViewList> {
+  late SharedPreferences prefs;
+
   String name = "";
   String surname = "";
   String location = "";
   String start = "";
   String end = "";
   String desc = "";
-
-  late SharedPreferences prefs;
 
   getSharedPreferences() async {
     prefs = await SharedPreferences.getInstance();
@@ -29,7 +33,7 @@ class _ViewlistState extends State<ViewList> {
   }
 
   _retrieve() async {
-    // holt die gespeicherten Werte
+    // holt die gespeicherten Werte aus Shared Preferences
     prefs = await SharedPreferences.getInstance();
     name = prefs.getString("_name")!;
     surname = prefs.getString("_surname")!;
@@ -41,7 +45,8 @@ class _ViewlistState extends State<ViewList> {
   }
 
   _delete() async {
-    // Löscht die gespeicherten Werte
+    // Löscht die gespeicherten Werte und füllt diese mit "".
+    // Letzteres dient zur Aktualisierung & Vermeidung eines Null Pointer Errors.
     prefs = await SharedPreferences.getInstance();
     prefs.remove("_name");
     prefs.remove("_surname");

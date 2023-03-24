@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'createlist.dart';
 import 'viewlist.dart';
 
+/*
+Bildet die Checklist Page
+*/
+
 class Checklist extends StatefulWidget {
   const Checklist({Key? key}) : super(key: key);
 

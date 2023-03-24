@@ -1,5 +1,9 @@
 import 'package:flutter/widgets.dart';
 
+/*
+Menu zur Auswahl der Sprachen
+*/
+
 class L10n {
   static final all = [
     const Locale('en'),

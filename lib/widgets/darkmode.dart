@@ -6,7 +6,7 @@ import '/services/provider/darkmode_provider.dart';
 /*
 Die Datei ist für das Bilden
 der Dropdownliste der Dark und Light mode 
-in der Einstellungs-Page
+in der Settings Page
 */
 
 class Darkmode extends StatefulWidget {

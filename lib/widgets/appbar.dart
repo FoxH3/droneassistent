@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/*
+Custom Appbar Widget für die gesamte Applikation
+*/
+
 AppBar appBar(String text) {
   return AppBar(
     iconTheme: const IconThemeData(
