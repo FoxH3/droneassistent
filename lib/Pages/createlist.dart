@@ -2,6 +2,12 @@ import '../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+String vorname = "";
+String nachname = "";
+String startort = "";
+String startzeitpunkt = "";
+String endzeitpunkt = "";
+
 class CreateList extends StatefulWidget {
   const CreateList({Key? key}) : super(key: key);
 
@@ -14,11 +20,42 @@ class ChecklistState extends State<CreateList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: appBar("CreateList"),
-        body: const SafeArea(
+        body: SafeArea(
             child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 child: Column(
-                  children: [TextField()],
+                  children: [
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Vorname:",
+                            style: Theme.of(context).textTheme.titleMedium)),
+                    const TextField(),
+                    const SizedBox(height: 30),
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Nachname:",
+                            style: Theme.of(context).textTheme.titleMedium)),
+                    const TextField(),
+                    const SizedBox(height: 30),
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Startort:",
+                            style: Theme.of(context).textTheme.titleMedium)),
+                    const TextField(),
+                    const SizedBox(height: 30),
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Startzeitpunkt:",
+                            style: Theme.of(context).textTheme.titleMedium)),
+                    const TextField(),
+                    const SizedBox(height: 30),
+                    Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Endzeitpunkt",
+                            style: Theme.of(context).textTheme.titleMedium)),
+                    const TextField(),
+                  ],
                 ))));
   }
 }
