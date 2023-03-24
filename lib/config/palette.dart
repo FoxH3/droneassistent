@@ -25,7 +25,7 @@ class Palette with ChangeNotifier {
         color: Color(0xFFF6FDFF),
       ), // Sliding Panel
       bodyLarge: TextStyle(
-        color: Color(0xFFF6FDFF),
+        color: Color(0xE6333333),
       ), // Haupttext
       bodyMedium: TextStyle(
         color: Colors.black,
@@ -60,7 +60,7 @@ class Palette with ChangeNotifier {
         color: Color(0xFFF6FDFF),
       ), // Sliding Panel
       bodyLarge: TextStyle(
-        color: Colors.black,
+        color: Color(0xE6333333),
       ), // Haupttext (Light = Black - Dark = Weiß)
       bodyMedium: TextStyle(
         color: Color(0xFFF6FDFF),

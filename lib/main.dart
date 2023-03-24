@@ -158,7 +158,7 @@ class MyHomePageState extends State<MyHomePage> {
                     ElevatedButton(
                         // Button welcher zur No Fly Map führt
                         style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(370, 290),
+                            minimumSize: const Size(370, 250),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25)),
                             backgroundColor:
@@ -183,7 +183,7 @@ class MyHomePageState extends State<MyHomePage> {
                     ElevatedButton(
                         // Button welcher zur Checklist Page führt
                         style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(370, 290),
+                            minimumSize: const Size(370, 250),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25)),
                             backgroundColor:

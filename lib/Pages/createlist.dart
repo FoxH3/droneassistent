@@ -2,20 +2,67 @@ import '../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String vorname = "";
-String nachname = "";
-String startort = "";
-String startzeitpunkt = "";
-String endzeitpunkt = "";
-
 class CreateList extends StatefulWidget {
   const CreateList({Key? key}) : super(key: key);
 
   @override
-  State<CreateList> createState() => ChecklistState();
+  State<CreateList> createState() => _CreateListState();
 }
 
-class ChecklistState extends State<CreateList> {
+class _CreateListState extends State<CreateList> {
+  late TextEditingController _nameController;
+  late TextEditingController _surnameController;
+  late TextEditingController _locationController;
+  late TextEditingController _startController;
+  late TextEditingController _endController;
+  String name = "";
+  String surname = "";
+  String location = "";
+  String start = "";
+  String end = "";
+
+  late SharedPreferences prefs;
+
+  getSharedPreferences() async {
+    prefs = await SharedPreferences.getInstance();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController();
+    _surnameController = TextEditingController();
+    _locationController = TextEditingController();
+    _startController = TextEditingController();
+    _endController = TextEditingController();
+    _savechecklist();
+  }
+
+  _savechecklist() async {
+    //Speichert die eingegebenen Werte lokal
+    prefs = await SharedPreferences.getInstance();
+    prefs.setString(
+      "_name",
+      _nameController.text.toString(),
+    );
+    prefs.setString(
+      "_surname",
+      _surnameController.text.toString(),
+    );
+    prefs.setString(
+      "_location",
+      _locationController.text.toString(),
+    );
+    prefs.setString(
+      "_start",
+      _startController.text.toString(),
+    );
+    prefs.setString(
+      "_end",
+      _endController.text.toString(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,40 +75,70 @@ class ChecklistState extends State<CreateList> {
                   children: [
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: Text("Vorname:",
+                        child: Text("Name:",
                             style: Theme.of(context).textTheme.titleMedium)),
-                    const TextField(),
-                    const SizedBox(height: 30),
+                    TextField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                          labelText: "Please enter your Name here"),
+                    ),
+                    const SizedBox(height: 20),
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: Text("Nachname:",
+                        child: Text("Surname:",
                             style: Theme.of(context).textTheme.titleMedium)),
-                    const TextField(),
-                    const SizedBox(height: 30),
+                    TextField(
+                      controller: _surnameController,
+                      decoration: const InputDecoration(
+                          labelText: "Please enter your Surname here"),
+                    ),
+                    const SizedBox(height: 20),
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: Text("Startort:",
+                        child: Text("Location:",
                             style: Theme.of(context).textTheme.titleMedium)),
-                    const TextField(),
-                    const SizedBox(height: 30),
+                    TextField(
+                      controller: _locationController,
+                      decoration: const InputDecoration(
+                          labelText: "Please enter your Location here"),
+                    ),
+                    const SizedBox(height: 20),
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: Text("Startzeitpunkt:",
+                        child: Text("Starttime:",
                             style: Theme.of(context).textTheme.titleMedium)),
-                    const TextField(),
-                    const SizedBox(height: 30),
+                    TextField(
+                      controller: _startController,
+                      decoration: const InputDecoration(
+                          labelText: "Please enter your Starttime here"),
+                    ),
+                    const SizedBox(height: 20),
                     Container(
                         alignment: Alignment.centerLeft,
-                        child: Text("Endzeitpunkt",
+                        child: Text("Endtime:",
                             style: Theme.of(context).textTheme.titleMedium)),
-                    const TextField(),
-                    const SizedBox(height: 30),
+                    TextField(
+                      controller: _endController,
+                      decoration: const InputDecoration(
+                          labelText: "Please enter your Endtime here"),
+                    ),
+                    const SizedBox(height: 20),
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          _savechecklist();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                backgroundColor: Colors.green,
+                                content: Text(
+                                  'Entry was saved',
+                                  textAlign: TextAlign.center,
+                                )),
+                          );
+                        },
                         child: Text(
                           "Save the Entry",
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ))
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        )),
                   ],
                 ))));
   }

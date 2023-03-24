@@ -1,7 +1,5 @@
 import '../widgets/appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'createlist.dart';
 import 'viewlist.dart';
 
@@ -26,7 +24,7 @@ class ChecklistState extends State<Checklist> {
               ElevatedButton(
                   // Button welcher zur CreateList Page führt
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(370, 290),
+                      minimumSize: const Size(370, 250),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25)),
                       backgroundColor:
@@ -51,7 +49,7 @@ class ChecklistState extends State<Checklist> {
               ElevatedButton(
                   // Button welcher zur ViewList führt
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(370, 290),
+                      minimumSize: const Size(370, 250),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25)),
                       backgroundColor:
